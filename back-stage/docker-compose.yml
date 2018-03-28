@@ -5,6 +5,7 @@ services:
     # build: .
     #command: ["make", "all"]
     env_file: .env
+    network_mode: "host"
     volumes:
         - "${BACKEND_LOGS}:/go/src/github.com/Appscrunch/Multy-back/cmd/logs"
         - "${BACKEND_CONF}:/go/src/github.com/Appscrunch/Multy-back/cmd/multy.config"
@@ -60,7 +61,7 @@ services:
       - ${MONGO_DATA_DIR}:/data/db
       - ${MONGO_LOG_DIR}:/data/logs
     ports:
-      - 27017:27017
+      - 27015:27017
 
   nsqlookup-stage:
     image: nsqio/nsq
