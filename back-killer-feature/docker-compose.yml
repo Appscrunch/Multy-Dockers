@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  multy-back-killer-feature:
+    # image:  multyio/multy-back-prod:latest
+    build: .
+    #command: ["make", "all"]
+    ports:
+      - "5555:5555"
+    
